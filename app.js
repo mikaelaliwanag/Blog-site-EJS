@@ -30,6 +30,14 @@ app.get("/compose", function(req, res) {
   res.render("compose");
 });
 
+app.post("/compose", function(req, res) {
+  
+  const compose = req.body.entryTitle; 
+
+  console.log(compose);
+  
+})
+
 
 
 
