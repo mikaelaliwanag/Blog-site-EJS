@@ -12,7 +12,7 @@
     letter-spacing: 5px;
 }
 .navbar-nav  li a:hover {
-    color: #e79696 !important;
+    color: #f8c0c0 !important;
 }
 
 .footer-padding {
@@ -25,11 +25,11 @@
 	bottom: 0;
 	width: 100%;
 	height: 70px;
-	background-color: #e79696;
+	background-color: #f8c0c0;
 }
 
 .footer p {
 	margin-top: 30px;
 	font-size: 14px;
-  color: #f1ecec;
+  color: #fff;
 }
