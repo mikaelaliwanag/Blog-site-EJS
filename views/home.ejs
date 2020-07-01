@@ -4,11 +4,11 @@
 
 <p><%= startingContent %></p>
 
-<% for (let i = 0; i < newPost.length; i++) { %>
+<% newPost.forEach(function(post) { %>
+   <h1><%= post.title %> </h1>
+   <p><%= post.entry %></p>
+<% }) %>
 
-  <h1> <%= newPost[i].title %> </h1>
-  <p> <%= newPost[i].entry %> </p>
 
-<% } %>
 
 <%- include('partials/footer'); -%> 
