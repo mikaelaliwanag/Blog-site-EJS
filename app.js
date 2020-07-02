@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+///// home route //////
 app.get("/", function(req, res) {
   res.render("home", {
     startingContent: homeStartingContent, 
@@ -32,6 +33,7 @@ app.get("/contact", function(req, res) {
   res.render("contact", {startingContent: contactContent});
 });
 
+///////compose page//////
 app.get("/compose", function(req, res) {
   res.render("compose");
 });
@@ -48,7 +50,7 @@ app.post("/compose", function(req, res) {
   res.redirect("/");
 });
 
-//routing parameter
+/////routing parameter////
 app.get('/posts/:postName', function(req, res) {
 
   const requestedTitle = _.lowerCase(req.params.postName);
@@ -57,16 +59,15 @@ app.get('/posts/:postName', function(req, res) {
     const storedTitle = _.lowerCase(post.title);
 
     if(requestedTitle === storedTitle) {
-      
-       res.render("post", {postTitle: post.title, postEntry: post.entry});
-
+       res.render("post", {
+         postTitle: post.title, 
+         postEntry: post.entry
+        });
     }
 
   });
 
 });
-
-
 
 
 app.listen(3000, function() {
